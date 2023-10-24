@@ -16,6 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
+@Data
 public class Post {
     @Id
     @Column(columnDefinition = "bigint(20)")
@@ -31,9 +32,12 @@ public class Post {
     private boolean published;
     @Column(name = "publish_at",columnDefinition = "datetime(6)")
     private Instant publishedAt;
+
+    @Lob
     @Column(columnDefinition = "tinytext")
     private String summary;
     @Column(columnDefinition = "varchar(75)")
+
     private String title;
     @Column(name = "update_at", columnDefinition = "datetime(6)")
     private Instant updateAt;

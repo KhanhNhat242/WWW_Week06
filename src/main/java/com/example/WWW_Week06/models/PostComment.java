@@ -15,12 +15,16 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
+@Data
 public class PostComment {
     @Id
     @Column(columnDefinition = "bigint(20)")
     private long id;
     @Column(columnDefinition = "tinytext")
+
+    @Lob
     private String content;
+
     @Column(name = "created_at", columnDefinition = "datetime(6)")
     private Instant createdAt;
     @Column(columnDefinition = "bit(1)")

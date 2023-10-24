@@ -13,6 +13,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
+@Data
 public class User {
     @Id
     @Column(columnDefinition = "bigint(20)")
@@ -22,8 +23,11 @@ public class User {
     private String email;
     @Column(name = "first_name", columnDefinition = "varchar(50)")
     private String firstName;
+
+    @Lob
     @Column(columnDefinition = "tinytext")
     private String intro;
+
     @Column(name = "last_login", columnDefinition = "datetime(6)")
     private Instant lastLogin;
     @Column(name = "last_name", columnDefinition = "varchar(50)")
@@ -34,8 +38,11 @@ public class User {
     private String mobile;
     @Column(name = "password_hash", columnDefinition = "varchar(32)")
     private String passwordHash;
+
+    @Lob
     @Column(columnDefinition = "tinytext")
     private String profile;
+
     @Column(name = "registered_at", columnDefinition = "datetime(6)")
     private Instant registeredAt;
 
